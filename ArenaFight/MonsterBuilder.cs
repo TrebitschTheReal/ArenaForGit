@@ -34,7 +34,7 @@ namespace ArenaFight
             get { return this.name; }
             set
             {
-                if (this.name.Length > 15) Exception("Name.Length must be lower than 15 characters!");
+                if (value.Length > 15) Exception("Name.Length must be lower than 15 characters!");
                 else this.name = value;
             }
         }
@@ -48,7 +48,11 @@ namespace ArenaFight
         public int Health
         {
             get { return this.health; }
-            set { this.health = value; }
+            set
+            {
+                if (value > 101) Exception("Health points value must be 100 or lower!");
+                else this.health = value;
+            }
         }
 
         public int Armor
@@ -80,7 +84,7 @@ namespace ArenaFight
             get { return this.attackRate; }
         }
 
-        public void Exception (string text)
+        private void Exception (string text)
         {
             throw new FormatException(text);
         }

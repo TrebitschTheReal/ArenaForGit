@@ -15,6 +15,7 @@ namespace ArenaFight
         public void Attack()
         {
             Console.WriteLine("{0} - war power: {1} ", Monsters[0].Name, Monsters[0].AttackRate);
+            Console.WriteLine("{0} - Health: {1} ", Monsters[0].Name, Monsters[0].Health);
             Console.WriteLine("{0} - war power: {1} ", Monsters[1].Name, Monsters[1].AttackRate);
             Console.WriteLine("{0} - war power: {1} ", Monsters[2].Name, Monsters[2].AttackRate);
 
