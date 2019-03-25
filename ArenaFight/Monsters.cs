@@ -13,16 +13,16 @@ namespace ArenaFight
         private MonsterBuilder SwampOrc = new MonsterBuilder("Swamp Orc", true, 55, 30, 4, 7, 4);
         private MonsterBuilder OrcShaman = new MonsterBuilder("Orc Shaman", true, 20, 5, 3, 8, 5);
         
-        public MonsterBuilder[] Mob
+        public MonsterBuilder[] CreateMobs
         {
             get { return new MonsterBuilder[3] { Bruti, SwampOrc, OrcShaman }; }
         }
 
         public void MonsterStats()
         {
-            Console.WriteLine("{0} - war power: {1} ", Mob[0].Name, Mob[0].AttackRate);
-            Console.WriteLine("{0} - war power: {1} ", Mob[1].Name, Mob[1].AttackRate);
-            Console.WriteLine("{0} - war power: {1} ", Mob[2].Name, Mob[2].AttackRate);
+            Console.WriteLine("{0} - war power: {1} ", CreateMobs[0].Name, CreateMobs[0].AttackRate);
+            Console.WriteLine("{0} - war power: {1} ", CreateMobs[1].Name, CreateMobs[1].AttackRate);
+            Console.WriteLine("{0} - war power: {1} ", CreateMobs[2].Name, CreateMobs[2].AttackRate);
         }
 
 

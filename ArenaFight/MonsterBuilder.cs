@@ -32,7 +32,11 @@ namespace ArenaFight
         public string Name
         {
             get { return this.name; }
-            set { this.name = value; }
+            set
+            {
+                if (this.name.Length > 15) Exception("Name.Length must be lower than 15 characters!");
+                else this.name = value;
+            }
         }
 
         public bool EvilOrNot
@@ -74,7 +78,11 @@ namespace ArenaFight
         public int AttackRate
         {
             get { return this.attackRate; }
-            set { this.attackRate = value; }
+        }
+
+        public void Exception (string text)
+        {
+            throw new FormatException(text);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace ArenaFight
             var fight = new Fight();
             var monster = new Monsters();
 
-            monster.MonsterStats();
+            fight.Attack();
 
             Console.ReadKey();
         }
