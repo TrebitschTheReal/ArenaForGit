@@ -10,7 +10,7 @@ namespace ArenaFight
     {
         private MonsterBuilder Bruti = new MonsterBuilder("Bruti", false, 60, 55, 8, 3, 2);
         private MonsterBuilder SwampOrc = new MonsterBuilder("Swamp Orc", true, 55, 30, 4, 7, 4);
-        private MonsterBuilder OrcShaman = new MonsterBuilder("Orc Shaman", true, 20, 5, 3, 8, 5);
+        private MonsterBuilder OrcShaman = new MonsterBuilder("Orc Shaman", false, 20, 5, 3, 8, 5);
         
         public MonsterBuilder[] Mob
         {
