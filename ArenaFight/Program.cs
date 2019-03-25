@@ -11,8 +11,9 @@ namespace ArenaFight
         static void Main()
         {
             var fight = new Fight();
+            var monster = new Monsters();
 
-            fight.Attack();
+            monster.MonsterStats();
 
             Console.ReadKey();
         }
