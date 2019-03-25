@@ -34,7 +34,7 @@ namespace ArenaFight
             get { return this.name; }
             set
             {
-                if (value.Length > 15) Exception("Name.Length must be lower than 15 characters!");
+                if (value.Length > 15) Exception("Name.Length must be lower than 15 characters! ");
                 else this.name = value;
             }
         }
