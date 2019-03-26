@@ -11,8 +11,12 @@ namespace ArenaFight
         static void Main()
         {
             var fight = new Fight();
+            string winner;
 
-            fight.Attack();
+            winner = fight.Battle(0,2);
+            Console.WriteLine(winner);
+
+
 
             Console.ReadKey();
         }

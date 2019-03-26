@@ -19,16 +19,15 @@ namespace ArenaFight
         private int attackRate;
         private int actualHealth;
 
-
         public MonsterBuilder(string name, bool evilOrNot, int maxHealth, int armor, int strength, int speed, int intelligence)
         {
             this.Name = name;
-            this.evilOrNot = evilOrNot;
+            this.EvilOrNot = evilOrNot;
             this.MaxHealth = maxHealth;
-            this.armor = armor;
-            this.strength = strength;
-            this.speed = speed;
-            this.intelligence = intelligence;
+            this.Armor = armor;
+            this.Strength = strength;
+            this.Speed = speed;
+            this.Intelligence = intelligence;
 
             this.attackRate = (strength + speed + intelligence) / 2;
             this.actualHealth = maxHealth;
@@ -38,10 +37,7 @@ namespace ArenaFight
         {
             get { return this.name; }  // akkor fut le, ha csak lekérdezzük az értéket. returnolja a "name" adattagot
             set // akkor fut le amikor módosítani is akarjuk magát a tulajdonságot. A tulajdonságnak ugyan az a neve mint az adattagnak koncenció szerint.
-            {
-                if (value.Length > 15) Exception("Name.Length must be lower than 15 characters!");
-                else this.name = value;
-            }
+            { this.name = value; }
         }
 
         public bool EvilOrNot
@@ -54,13 +50,11 @@ namespace ArenaFight
         {           
             get
             {
-                //double szam = 42.3;
-                //return Convert.ToInt32(szam);
                 return this.maxHealth;
             }
             set
             {
-                if (value > 100) Exception("Health points value must be 100 or lower!");
+                if (value > 300) Exception("Health points value must be 300 or lower!");
                 else this.maxHealth = value;
             }
         }
@@ -68,25 +62,41 @@ namespace ArenaFight
         public int Armor
         {
             get { return this.armor; }
-            set { this.armor = value; }
+            set
+            {
+                if (value > 100) Exception("Armor's maximum is 100");
+                else this.armor = value;
+            }
         }
 
         public int Strength
         {
             get { return this.strength; }
-            set { this.strength = value; }
+            set
+            {
+                if (value > 50) Exception("Strength, speed and intelligence maximum is 50");
+                else this.strength = value;
+            }
         }
 
         public int Speed
         {
             get { return this.speed; }
-            set { this.speed = value; }
+            set
+            {
+                if (value > 50) Exception("Strength, speed and intelligence maximum is 50");
+                else this.speed = value;
+            }
         }
 
         public int Intelligence
         {
             get { return this.intelligence; }
-            set { this.intelligence = value; }
+            set
+            {
+                if (value > 50) Exception("Strength, speed and intelligence maximum is 50");
+                else this.intelligence = value;
+            }
         }
 
         public int AttackRate
