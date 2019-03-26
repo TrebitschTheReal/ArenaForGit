@@ -36,12 +36,21 @@ namespace ArenaFight
         }
         public string Battle (int MonstersIndexAttacker, int MonstersIndexDefender)
         {
+            int firstHit = StartTheFight(MonstersIndexAttacker, MonstersIndexDefender);
+            int attacker = MonstersIndexAttacker;
+            int defender = MonstersIndexDefender;
+
             while (!IsSomeoneDied(MonstersIndexAttacker, MonstersIndexDefender))
             {
-                Attack(MonstersIndexAttacker, MonstersIndexDefender);
-                Console.WriteLine("{0}'s health: {1}", Monsters[MonstersIndexAttacker].Name, Monsters[MonstersIndexAttacker].ActualHealth);
-                Console.WriteLine("{0}'s health: {1}", Monsters[MonstersIndexDefender].Name, Monsters[MonstersIndexDefender].ActualHealth);
-                Attack(MonstersIndexDefender, MonstersIndexAttacker);
+                Attack(attacker, defender);
+                Console.WriteLine("{0}'s health: {1}", Monsters[attacker].Name, Monsters[attacker].ActualHealth);
+                Console.WriteLine("{0}'s health: {1}", Monsters[defender].Name, Monsters[defender].ActualHealth);
+                if (attacker == MonstersIndexAttacker && defender == MonstersIndexDefender)
+                {
+                    attacker = defender;
+                    defender = MonstersIndexAttacker;
+
+                }
             }
 
 
@@ -62,7 +71,17 @@ namespace ArenaFight
             }
             return live;
         }
-
+        public int StartTheFight(int MonstersIndexAttacker, int MonstersIndexDefender)
+        {
+            if(Monsters[MonstersIndexAttacker].Speed > Monsters[MonstersIndexDefender].Speed)
+            {
+                return MonstersIndexAttacker;
+            }
+            else
+            {
+                return MonstersIndexDefender;
+            }
+        }
 
 
 
